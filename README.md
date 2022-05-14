@@ -24,9 +24,7 @@ Negative impacts could include policy-makers choosing to invest less in zones de
 
 * New Orleans lot data - for development of flood risk map, sourced from [New Orleans Open Data](https://data.nola.gov/dataset/Lots/m5br-772y) (assets)
 
-### Potential:
+* [NOLA population by block group](https://data.census.gov/cedsci/table?q=census%20tract&t=Populations%20and%20People&g=0500000US22071%241500000&tid=ACSDT5Y2020.B01003) - population analysis
 
-* Landsat satellite imagery - for damage map, comparisons between before/after hurricanes
-
-* [Nola neighborhood boundaries](https://data.nola.gov/Geographic-Base-Layers/Neighborhood-Statistical-Areas/c2j2-5qdf) - potential neighborhood analysis
+* [Nola neighborhood boundaries](https://data.nola.gov/Geographic-Base-Layers/Neighborhood-Statistical-Areas/c2j2-5qdf) - neighborhood blocks
 
