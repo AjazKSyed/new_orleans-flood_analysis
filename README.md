@@ -9,7 +9,6 @@ For our project we will examine hurricane flooding in New Orleans. New Orleans i
 
 The intended audience of the project are residents of the area, and also any emergency responding groups. City and state offices and policy-makers. Weather watchers
 
-***
 
 ## Data Sources
 
@@ -19,13 +18,13 @@ The intended audience of the project are residents of the area, and also any eme
 
 * Nola Hurricane water level increase and flood data - for developing risk zone levels
 
-* SRTM elevation data - for use in applying flood risk zones to New Orleans
+* SRTM elevation data - for use in applying flood risk zones to New Orleans (assets)
 
-* Nola land use permit data - for identifying properties
+* New Orleans lot data - for development of flood risk map, sourced from [New Orleans Open Data](https://data.nola.gov/dataset/Lots/m5br-772y) (assets)
 
 ### Potential:
 
 * Landsat satellite imagery - for damage map, comparisons between before/after hurricanes
 
-* [Nola neighborhood boundaries](https://data.nola.gov/Geographic-Base-Layers/Neighborhood-Statistical-Areas/c2j2-5qdf)
+* [Nola neighborhood boundaries](https://data.nola.gov/Geographic-Base-Layers/Neighborhood-Statistical-Areas/c2j2-5qdf) - potential neighborhood analysis
 
