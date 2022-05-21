@@ -11,6 +11,14 @@
 Negative impacts could include policy-makers choosing to invest less in zones deemed at high risk for flooding, which could worsen socio-economic disparities in the city and put lives at greater risk. We could attempt to avoid this by emphasizing the need to invest in higher risk zones to bring down overall risk in the city.
 
 
+## Work-In-Progress Notes
+
+### Risk Zone Development:
+
+![risk zone development image](img/riskWIP.png)
+
+So far we've gathered digital elevation data from SRTM and overlaid the raster tiles upon a basemap (shown above). Next steps will include researching flood water levels during past hurricanes in New Orleans to develop risk level categories and conditional elevation raster layers based on those categories. Another layer of New Orleans plots will then be overlaid, and seperate SQL statements will be employed for each risk level to dtermine which plots intersect with each risk levels conditional raster data, effectively identifying which plots are at higher risk to flood damage based on elevation.
+
 
 ## Data Sources
 
@@ -27,4 +35,6 @@ Negative impacts could include policy-makers choosing to invest less in zones de
 * [NOLA population by block group](https://data.census.gov/cedsci/table?q=census%20tract&t=Populations%20and%20People&g=0500000US22071%241500000&tid=ACSDT5Y2020.B01003) - population analysis
 
 * [Nola neighborhood boundaries](https://data.nola.gov/Geographic-Base-Layers/Neighborhood-Statistical-Areas/c2j2-5qdf) - neighborhood blocks
+
+* [Nola Storm Surge](https://ready.nola.gov/hazard-mitigation/hazards/storm-surge-and-coastal-flooding/#:~:text=The%20damages%20caused%20by%20Hurricane%20Katrina%20demonstrate%20that,the%20south%20shore%20in%20Jefferson%20and%20Orleans%20Parishes) - Risk zone development (flood levels)
 
