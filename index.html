@@ -109,7 +109,7 @@
 
   <script>
     // 1. Declare the maps, script panels, and different thematic layers.
-    let map, scriptPanel = scrollama(), countiesLayer, cellTowersLayer;
+    let map, scriptPanel = scrollama(), neighborhoodsLayer, emergency_poisLayer;
 
     // 2. Intialize the layout.
    
@@ -164,32 +164,32 @@
     // 5. define the asynchronous function to load geojson data and then performs the dependent actions.
     async function geojsonFetch() {
 
-      // 6 wait till the data of washington counties and celltowers are fully loaded.
-      let response, counties, celltowers;
-      response = await fetch("assets/wacountydata.geojson");
-      counties = await response.json();
-      response = await fetch("assets/celltowers.geojson");
-      celltowers = await response.json();
+      // 6 wait till the data of washington counties and emergency_pois are fully loaded.
+      let response, neighborhoods, emergency_pois;
+      response = await fetch("final_assets/nola_neighborhood_data.geojson");
+      neighborhoods = await response.json();
+      response = await fetch("final_assets/emergency_pois.geojson");
+      emergency_pois = await response.json();
 
 
       // 7. Trigger operations inside of the the ()=> {} funciton while loading the map.
       map.on('load', () => {
 
         // 8. add map source and declare layers.
-        map.addSource('celltowers-src', {
+        map.addSource('emergency_pois-src', {
           type: 'geojson',
-          data: celltowers
+          data: emergency_pois
         });
 
-        map.addSource('counties-src', {
+        map.addSource('neighborhoods-src', {
           type: 'geojson',
-          data: counties
+          data: neighborhoods
         });
 
-        countiesLayer = {
-          'id': 'counties-polygons',
+        neighborhoodsLayer = {
+          'id': 'neighborhoods-polygons',
           'type': 'fill',
-          'source': 'counties-src',
+          'source': 'neighborhoods-src',
           'minzoom': 5,
           'paint': {
             'fill-color': '#0080ff',
@@ -197,10 +197,10 @@
           }
         };
 
-        cellTowersLayer = {
-          'id': 'celltowers-points',
+        emergency_poisLayer = {
+          'id': 'emergency_pois-points',
           'type': 'circle',
-          'source': 'celltowers-src',
+          'source': 'emergency_pois-src',
           'minzoom': 5,
           'paint': {
             'circle-color': 'red',
@@ -233,18 +233,18 @@
               speed: 0.5
             }); // fly to a new location
             
-            if (typeof (map.getSource('counties-src')) == 'undefined') { //if the map source 'counties-src' does not exist
-              map.addSource('counties-src', {
+            if (typeof (map.getSource('neighborhoods-src')) == 'undefined') { //if the map source 'neighborhoods-src' does not exist
+              map.addSource('neighborhoods-src', {
                 type: 'geojson',
-                data: counties
-              }); // reload the map source of 'counties-src'
+                data: neighborhoods
+              }); // reload the map source of 'neighborhoods-src'
             } else {
-              map.getSource('counties-src').setData(counties); // if the map source does not exist, relaod the data counties to the pre-defined map source 'counties-src'.
+              map.getSource('neighborhoods-src').setData(neighborhoods); // if the map source does not exist, relaod the data neighborhoods to the pre-defined map source 'counties-src'.
 
             }
 
-            if (!map.getLayer("counties-polygons")) { // if the map layer 'counties-polygons' does not exit
-              map.addLayer(countiesLayer);
+            if (!map.getLayer("neighborhoods-polygons")) { // if the map layer 'neighborhoods-polygons' does not exit
+              map.addLayer(neighborhoodsLayer);
             }
             document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
 
@@ -257,18 +257,18 @@
 
             });
 
-            if (typeof (map.getSource('celltowers-src')) == 'undefined') {
-              map.addSource('celltowers-src', {
+            if (typeof (map.getSource('emergency_pois-src')) == 'undefined') {
+              map.addSource('emergency_pois-src', {
                 type: 'geojson',
-                data: celltowers
+                data: emergency_pois
               });
             } else {
-              map.getSource('celltowers-src').setData(celltowers);
+              map.getSource('emergency_pois-src').setData(emergency_pois);
 
             }
 
-            if (!map.getLayer("celltowers-points")) {
-              map.addLayer(cellTowersLayer);
+            if (!map.getLayer("emergency_pois-points")) {
+              map.addLayer(emergency_poisLayer);
             }
           } else if (index === 2) {
             //Relocate to Seattle
@@ -310,8 +310,8 @@
           var index = response.index;
 
           if (index === 0) {
-            if (map.getLayer("counties-polygons")) {
-              map.removeLayer('counties-polygons');
+            if (map.getLayer("neighborhoods-polygons")) {
+              map.removeLayer('neighborhoods-polygons');
             }
             if (response.direction == 'down') { 
               document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
@@ -319,8 +319,8 @@
               document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
             }
           } else if (index === 1) {https://github.com/AjazKSyed/new_orleans-flood_analysis
-            if (map.getLayer("celltowers-points")) {
-              map.removeLayer('celltowers-points');
+            if (map.getLayer("emergency_pois-points")) {
+              map.removeLayer('emergency_pois-points');
             }
           } else if (index === 3) {
             //exit to Portland
