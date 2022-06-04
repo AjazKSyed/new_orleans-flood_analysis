@@ -4,6 +4,158 @@
 html,
 body,
 #map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.legend .legend-title {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.legend .legend-scale ul {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+
+.legend .legend-scale ul li {
+  font-size: 80%;
+  list-style: none;
+  margin-left: 0;
+  line-height: 31px;
+  margin-bottom: 2px;
+}
+
+.legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 16px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 0;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border: 1px solid #999;
+}
+
+.legend .legend-source {
+  font-size: 70%;
+  color: #999;
+  clear: both;
+}
+
+.legend .legend-notes {
+  font-size: 70%;
+  padding-top: 10px;
+  color: rgb(6, 2, 32);
+}
+
+.legend a {
+  color: #777;
+}
+
+.legend {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
+  font-family: Arial, sans-serif;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  border-radius: 3px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: 260px;
+  margin-bottom: 40px;
+  width: 250px;
+}
+
+
+.legend2 .legend-title {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.legend2 .legend-scale ul {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+
+.legend2 .legend-scale ul li {
+  font-size: 80%;
+  list-style: none;
+  margin-left: 0;
+  line-height: 31px;
+  margin-bottom: 2px;
+}
+
+.legend2 ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 16px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 0;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border: 1px solid #999;
+}
+
+.legend2 .legend-source {
+  font-size: 70%;
+  color: #999;
+  clear: both;
+}
+
+.legend2 .legend-notes {
+  font-size: 70%;
+  padding-top: 10px;
+  color: rgb(6, 2, 32);
+}
+
+.legend2 a {
+  color: #777;
+}
+
+.legend2 {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
+  font-family: Arial, sans-serif;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  border-radius: 3px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: 260px;
+  margin-bottom: 40px;
+  width: 250px;
+}
+#map {
   width: 100%;
   height: 100%;
   margin: 0;

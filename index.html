@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="description" content="New Orleans Flood Analysis" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="viewport"
+    content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>New Orleans Flood Analysis</title>
   <!-- <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap" /> -->
@@ -13,44 +14,61 @@
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> -->
   <link rel="stylesheet" href="css/main.css">
   <script src="https://unpkg.com/scrollama"></script>
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
 </head>
 
 <body>
-  <section id="cover" style="background: url('img/flood_damage/hurricanKatrina.jpg') no-repeat center center;  background-size: cover;">
+  <section id="cover"
+    style="background: url('img/flood_damage/hurricanKatrina.jpg') no-repeat center center;  background-size: cover;">
     <div id="intro">
       <h1>New Orleans Flood Analysis</h1>
-      <h5>Created by Ajaz Syed, Maxwell James, Alyssa Havens, Emeka Emeche, Lee David</h5>
-      <p>This section shows where active research is happening, and on what topics to communicate on-going nature of
-        scientific learning. 
-        
+      <h5>Created by Ajaz Syed, Maxwell James, Alyssa Havens, Emeka Emeche, Lee
+        David</h5>
+      <p>This section shows where active research is happening, and on what
+        topics to communicate on-going nature of
+        scientific learning.
+
         Include intro about team and other information, here.
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula
-        eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede
+        eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+        parturient montes, nascetur ridiculus mus.
+        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+        Nulla consequat massa quis enim. Donec pede
         justo,
-        fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdet a, venenatis vitae, justo.
-        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+        fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
+        ut, imperdet a, venenatis vitae, justo.
+        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+        dapibus. Vivamus elementum semper nisi.
         Aenean
         vulputate
-        eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
-        dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+        eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+        eleifend ac, enim. Aliquam lorem ante,
+        dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut
+        metus varius laoreet. Quisque rutrum.
         Aenean imperdiet.
         Etiam
-        ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus,
-        tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
+        ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget
+        dui. Etiam rhoncus. Maecenas tempus,
+        tellus eget condimentum rhoncus, sem quam semper libero, sit amet
+        adipiscing sem neque sed ipsum. Nam quam nunc,
         blandit
         vel,
-        luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero
-        venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla
+        luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante
+        tincidunt tempus. Donec vitae sapien ut libero
+        venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
+        faucibus tincidunt. Duis leo. Sed fringilla
         mauris sit
         amet
-        nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
+        nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum
+        sodales, augue velit cursus nunc.</p>
 
       <div class="footnote">
-        <span> This line is a place holder for copyright note or other footnotes.</span>
-        <a target="_blank" href="https://www.uw.edu"> <img src="img/uw_logo.png" width="50px"></a>
+        <span> This line is a place holder for copyright note or other
+          footnotes.</span>
+        <a target="_blank" href="https://www.uw.edu"> <img src="img/uw_logo.png"
+            width="50px"></a>
       </div>
     </div>
   </section>
@@ -59,7 +77,10 @@
     <!-- a storymap can present differnt types of objects, like map, chart, diagram, etc. -->
     <div id="storyboard">
       <!-- create the place holder element for map -->
+
       <div id="map"></div>
+      <div class="map-overlay" id="legend"></div>
+
     </div>
 
     <article class="scene" data-scene="0">
@@ -67,20 +88,31 @@
     </article>
     <article class="scene" data-scene="1">
       <h2>Population Statistics</h2>
+
     </article>
     <article class="scene" data-scene="2">
+      <h2>Income Statistics</h2>
+
+    </article>
+    <article class="scene" data-scene="3">
       <h2>Flood Risk</h2>
     </article>
     <article class="scene" data-scene="4">
       <h2>What happens in an emergency?</h2>
-      <p>This section shows where active research is happening, and on what topics to communicate on-going nature of
-        scientific learning. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+      <p>This section shows where active research is happening, and on what
+        topics to communicate on-going nature of
+        scientific learning. Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Aenean commodo ligula eget dolor.
         Aenean massa.
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-        ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Donec quam felis,
+        ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+        quis enim. Donec pede justo, fringilla
         vel, aliquet nec,
-        vulputate eget, arcu. In enim justo, rhoncus ut, imperdet a, venenatis vitae, justo. Nullam dictum felis eu pede
-        mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate.
+        vulputate eget, arcu. In enim justo, rhoncus ut, imperdet a, venenatis
+        vitae, justo. Nullam dictum felis eu pede
+        mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+        semper nisi. Aenean vulputate.
       </p>
       <hr>
       <div>
@@ -111,7 +143,7 @@
     let map, scriptPanel = scrollama(), neighborhoodsLayer, emergency_poisLayer;
 
     // 2. Intialize the layout.
-   
+
     history.scrollRestoration = "manual"; // make sure the geo-narrative will be scrolled to the cover page even after a page refresh.
     window.scrollTo(0, 0); // scroll the geo-narrative to the coverpage
     adjustStoryboardlSize(); // force a browser window resize.
@@ -128,7 +160,7 @@
       for (const scene of scenes) {
         scene.style.height = sceneH + "px";
       }
-      
+
       // 3.2 determin the height of the storyboard.
       let storyboardHeight = window.innerHeight;
       let storyboardMarginTop = (window.innerHeight - storyboardHeight) / 2;
@@ -143,7 +175,7 @@
     // 4. Initialize the mapbox
     mapboxgl.accessToken =
       'pk.eyJ1IjoiYWphemtzeWVkIiwiYSI6ImNrd3plcWVsaTA0azkybm1wZ3c5MnB1OGcifQ.91la4ZENVFAgHfVaXoKjOw'; // Assign the access token
-   
+
     map = new mapboxgl.Map({
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/light-v10',
@@ -160,13 +192,25 @@
     // map.scrollZoom.disable();
 
 
+
+
+
+
+
     // 5. define the asynchronous function to load geojson data and then performs the dependent actions.
     async function geojsonFetch() {
 
-      // 6 wait till the data of washington counties and emergency_pois are fully loaded.
-      let response, neighborhoods, emergency_pois;
+      let response, neighborhoods, population20, income19, emergency_pois;
       response = await fetch("final_assets/nola_neighborhood_data.geojson");
       neighborhoods = await response.json();
+
+      response = await fetch("final_assets/income(2019).geojson");
+      income19 = await response.json();
+
+
+      response = await fetch("final_assets/population(2020).geojson");
+      population20 = await response.json();
+
       response = await fetch("final_assets/emergency_pois.geojson");
       emergency_pois = await response.json();
 
@@ -178,6 +222,16 @@
         map.addSource('emergency_pois-src', {
           type: 'geojson',
           data: emergency_pois
+        });
+
+        map.addSource('income19-src', {
+          type: 'geojson',
+          data: income19
+        });
+
+        map.addSource('population20-src', {
+          type: 'geojson',
+          data: population20
         });
 
         map.addSource('neighborhoods-src', {
@@ -195,6 +249,63 @@
             'fill-opacity': 0.5
           }
         };
+
+        population20Layer = {
+          'id': 'population20-polygons',
+          'type': 'fill',
+          'source': 'population20-src',
+          paint: {
+            'fill-color': [
+              'step',
+              ['get', 'population'],
+              '#ffffb2',   // use color #f7f4f9
+              1000,          // if population < 1000
+              '#ffd76d',   // use color #e7e1ef
+              2000,          // if 1000 <= population < 2000
+              '#fea649',   // use color #d4b9da
+              3000,          // if 2000 <= population < 3000
+              '#f86c30',   // use color #c994c7
+              4000,         // if 3000 <= population < 4000
+              '#e62f21',   // use color #df65b0
+              5000,         // if 4000 -4999
+              '#bd0026',   // use color #e7298a
+
+            ],
+            'fill-outline-color': '#BBBBBB',
+          },
+
+        };
+
+
+        income19Layer = {
+          'id': 'income19-polygons',
+          'type': 'fill',
+          'source': 'income19-src',
+          paint: {
+            'fill-color': [
+              'step',
+              ['get', 'income'],
+              '#f7fcf5',
+              10,
+              '#ddf2d7',   // use color #f7f4f9
+              10000,          // if population < 1000
+              '#b2e0ab',   // use color #e7e1ef
+              32000,         // if 1000 <= population < 2000
+              '#7bc87c',   // use color #d4b9da
+              56000,          // if 2000 <= population < 3000
+              '#3da75a',   // use color #c994c7
+              87000,         // if 3000 <= population < 4000
+              '#137e3a',   // use color #df65b0
+              125000,         // if 4000 -4999
+              '#00441b',   // use color #e7298a
+
+            ],
+            'fill-outline-color': '#BBBBBB',
+          },
+
+        };
+
+
 
         emergency_poisLayer = {
           'id': 'emergency_pois-points',
@@ -217,21 +328,21 @@
           })
           .onStepEnter(handleSceneEnter)
           .onStepExit(handleSceneExit);
-        
+
         // 10. This function performs when a scene enters the storyboard
         function handleSceneEnter(response) {
 
-          var index = response.index; // capture the id of the current scene. 
+          var index = response.index; // capture the id of the current scene.
 
           if (index === 0) { // When enter the first scene
 
             map.flyTo({
-              center: [-121.93, 47.33],
-              zoom: 8,
+              center: [-89.941, 29.957],
+              zoom: 10.62,
               pitch: 0,
-              speed: 0.5
+              // speed: 0.5
             }); // fly to a new location
-            
+
             if (typeof (map.getSource('neighborhoods-src')) == 'undefined') { //if the map source 'neighborhoods-src' does not exist
               map.addSource('neighborhoods-src', {
                 type: 'geojson',
@@ -248,11 +359,151 @@
             document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
 
           } else if (index === 1) { // When enter the second scene.
+
             map.flyTo({
-              center: [-121.93, 47.33],
-              zoom: 8,
-              pitch: 60,
-              speed: 0.5
+              center: [-89.941, 29.957],
+              zoom: 10.62, // starting zoom
+              pitch: 0,
+            });
+
+
+            const pop_layers = [
+              '<1000',
+              '1000-1999',
+              '2000-2999',
+              '3000-3999',
+              '4000-4999',
+              '5000+'
+            ];
+
+            const pop_colors = [
+              '#ffffb2',
+              '#ffd76d',
+              '#fea649',
+              '#f86c30',
+              '#e62f21',
+              '#bd0026'
+            ];
+
+
+
+
+
+
+
+
+                if (typeof (map.getSource('population20-src')) == 'undefined') {
+                  map.addSource('population20-src', {
+                    type: 'geojson',
+                    data: population20
+                  });
+                } else {
+                  map.getSource('population20-src').setData(population20);
+
+                }
+
+                if (!map.getLayer("population20-points")) {
+                  map.addLayer(population20Layer);
+                }
+
+                const legend = document.getElementById("legend");
+                legend.innerHTML = "<b>Population (2020)</b><br><br>";
+
+
+                pop_layers.forEach((layer, i) => {
+                  const color = pop_colors[i];
+                  const item = document.createElement('div');
+                  const key = document.createElement('span');
+                  key.className = 'legend-key';
+                  key.style.backgroundColor = color;
+
+                  const value = document.createElement('span');
+                  value.innerHTML = `${layer}`;
+                  item.appendChild(key);
+                  item.appendChild(value);
+                  legend.appendChild(item);
+                });
+
+
+          } else if (index === 2) {
+            //Relocate to Seattle
+            map.flyTo({
+              center: [-89.941, 29.957],
+              zoom: 10.62, // starting zoom
+              pitch: 0,
+              // speed: 0.5
+
+            });
+
+            const inc_layers = [
+              'No data',
+              '<$10,000',
+              '$10,000 - $31,999',
+              '$32,000 - $55,999',
+              '$56,000 - $86,999',
+              '$87,000 - $124,999',
+              '$125,000+'
+            ];
+
+            const inc_colors = [
+              '#f7fcf5',
+              '#ddf2d7',
+              '#b2e0ab',
+              '#7bc87c',
+              '#3da75a',
+              '#137e3a',
+              '#00441b'
+            ];
+
+            if (typeof (map.getSource('income19-src')) == 'undefined') {
+                  map.addSource('income19-src', {
+                    type: 'geojson',
+                    data: income19
+                  });
+                } else {
+                  map.getSource('income19-src').setData(income19);
+
+                }
+
+                if (!map.getLayer("income19-points")) {
+                  map.addLayer(income19Layer);
+                }
+                // const legend = document.getElementById("legend2");
+                // legend.innerHTML = "<b>Average Household Income (2019)</b><br><br>";
+
+
+                // inc_layers.forEach((layer, i) => {
+                //   const color = inc_colors[i];
+                //   const item = document.createElement('div');
+                //   const key = document.createElement('span');
+                //   key.className = 'legend-key';
+                //   key.style.backgroundColor = color;
+
+                //   const value = document.createElement('span');
+                //   value.innerHTML = `${layer}`;
+                //   item.appendChild(key);
+                //   item.appendChild(value);
+                //   legend.appendChild(item);
+                // });
+
+
+          } else if (index === 3) {
+            //Relocate to Portland
+            map.flyTo({
+              center: [-89.941, 29.957],
+              zoom: 10.62, // starting zoom
+              // pitch: 60,
+              // speed: 0.5
+
+            });
+
+          }
+          else if (index === 4) {
+            map.flyTo({
+              center: [-89.941, 29.957],
+              zoom: 10.5,
+              // pitch: 60,
+              // speed: 0.5
 
             });
 
@@ -269,34 +520,14 @@
             if (!map.getLayer("emergency_pois-points")) {
               map.addLayer(emergency_poisLayer);
             }
-          } else if (index === 2) {
-            //Relocate to Seattle
+          }
+          else if (index === 6) {
+
             map.flyTo({
-              center: [-122.4121036, 47.6131229],
-              zoom: 12,
+              center: [-89.941, 29.957],
+              zoom: 10.62, // starting zoom
               pitch: 0,
-              speed: 0.5
-
-            });
-
-          } else if (index === 3) {
-            //Relocate to Portland
-            map.flyTo({
-              center: [-122.724366, 45.5428119],
-              zoom: 12,
-              pitch: 60,
-              speed: 0.5
-
-            });
-
-            map.setStyle('mapbox://styles/mapbox/satellite-streets-v10'); // change the base map
-          } else if (index === 6) {
-
-            map.flyTo({
-              center: [-122.4121036, 47.6131229],
-              zoom: 12,
-              pitch: 0,
-              speed: 0.5
+              // speed: 0.5
 
             });
 
@@ -312,19 +543,20 @@
             if (map.getLayer("neighborhoods-polygons")) {
               map.removeLayer('neighborhoods-polygons');
             }
-            if (response.direction == 'down') { 
+            if (response.direction == 'down') {
               document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
             } else {
               document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
             }
-          } else if (index === 1) {https://github.com/AjazKSyed/new_orleans-flood_analysis
+          } else if (index === 1) {
+            https://github.com/AjazKSyed/new_orleans-flood_analysis
             if (map.getLayer("emergency_pois-points")) {
               map.removeLayer('emergency_pois-points');
             }
           } else if (index === 3) {
             //exit to Portland
             map.setStyle('mapbox://styles/mapbox/light-v10');
-          } 
+          }
         }
 
 
