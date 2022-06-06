@@ -331,7 +331,7 @@
         riskLayer = {
           'id': 'risk-plots',
           'type': 'raster',
-          'source': 'riskmap'
+          'source': 'riskmap-src'
         };
 
         // 9. Initialize the script panel
@@ -512,16 +512,16 @@
 
             });
 
-            if (typeof (map.getSource('riskmap')) == 'undefined') {
-                  map.addSource('riskmap', {
+            if (typeof (map.getSource('riskmap-src')) == 'undefined') {
+                  map.addSource('riskmap-src', {
                     type: 'raster',
                   });
                 } else {
-                  map.getSource('riskmap')
+                  map.getSource('riskmap-src')
 
                 }
 
-                if (!map.getLayer("riskmap-plots")) {
+                if (!map.getLayer("risk-plots")) {
                   map.addLayer(riskLayer);
                 }
 
