@@ -239,6 +239,15 @@
           data: neighborhoods
         });
 
+        map.addSource('riskmap-src', {
+                'type': 'raster',
+                'tiles': [
+                    'final_assets/tiles/riskmap/{z}/{x}/{y}.png'
+                ],
+                'tileSize': 256,
+                'attribution': 'Map tiles designed by Max Jayne'
+            });
+
         neighborhoodsLayer = {
           'id': 'neighborhoods-polygons',
           'type': 'fill',
@@ -317,6 +326,12 @@
             'circle-radius': 4,
             'circle-opacity': 0.8,
           }
+        };
+
+        riskLayer = {
+          'id': 'risk-plots',
+          'type': 'raster',
+          'source': 'riskmap'
         };
 
         // 9. Initialize the script panel
@@ -496,6 +511,19 @@
               // speed: 0.5
 
             });
+
+            if (typeof (map.getSource('riskmap')) == 'undefined') {
+                  map.addSource('riskmap', {
+                    type: 'raster',
+                  });
+                } else {
+                  map.getSource('riskmap')
+
+                }
+
+                if (!map.getLayer("riskmap-plots")) {
+                  map.addLayer(riskLayer);
+                }
 
           }
           else if (index === 4) {
