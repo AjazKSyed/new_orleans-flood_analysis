@@ -512,6 +512,19 @@
 
             });
 
+            const risk_layers = [
+              '( <=1m above sea level )',
+              '( <=4m above sea level )',
+              '( <=9m above sea level )',
+              '( >9m above sea level )'
+            ];
+
+            const risk_colors = [
+              '#ff4901',
+              '#ffaf01',
+              '#ffea01',
+              '#19fe00'
+            ];
 
             if (typeof (map.getSource('riskmap-src')) == 'undefined') {
                   map.addSource('riskmap-src', {
@@ -523,10 +536,28 @@
                 }
 
             if (!map.getLayer("risk-plots")) {
-
-
               map.addLayer(riskLayer);
             }
+
+            document.getElementById("legend").style.visibility = "visible";
+
+            const legend = document.getElementById("legend");
+            legend.innerHTML = "<b>Risk Levels</b><br>";
+
+
+            risk_layers.forEach((layer, i) => {
+              const color = risk_colors[i];
+              const item = document.createElement('div');
+              const key = document.createElement('span');
+              key.className = 'legend-key';
+              key.style.backgroundColor = color;
+
+              const value = document.createElement('span');
+              value.innerHTML = `${layer}`;
+              item.appendChild(key);
+              item.appendChild(value);
+              legend.appendChild(item);
+            });
 
           } else if (index === 4) {
             map.flyTo({
