@@ -100,18 +100,18 @@
     <article class="scene" data-scene="4">
       <h2>What happens in an emergency?</h2>
       <p>
-        What happens in an emergency is that people would go to emergency shelters. This is most feasible when 
-        there isn't a safe route out of town due to debris, traffic, or not having a reliable means of transportation. 
-        The next option is to get out of town by car which is the most preferred option to take. This makes it so that people can be out of danger from 
+        What happens in an emergency is that people would go to emergency shelters. This is most feasible when
+        there isn't a safe route out of town due to debris, traffic, or not having a reliable means of transportation.
+        The next option is to get out of town by car which is the most preferred option to take. This makes it so that people can be out of danger from
         the flooding or other natural occurences and into a safer place. New Orleans requires their citizens
         to evacuate out of town, they even have bus systems and other means of transportation provided by the city
-        if people don't have cars. The current hurricane measures in place right now are the implementation of levees. 
-        Levees are a type of barrier that prevent the excess amounts of water from flooding the city from the coastline. 
-        Though there were a lot installed along the coastline, most of them have failed causing a sizable amount of water 
+        if people don't have cars. The current hurricane measures in place right now are the implementation of levees.
+        Levees are a type of barrier that prevent the excess amounts of water from flooding the city from the coastline.
+        Though there were a lot installed along the coastline, most of them have failed causing a sizable amount of water
         to flood New Orleans. They are also strengthening systems like pumps, floodwalls, floodgates, and home elevation
         to improve the brittle structure of New Orleans, and by extension, Lousiana.
 
-       
+
 
       </p>
       <hr>
@@ -358,6 +358,7 @@
         function handleSceneEnter(response) {
 
           var index = response.index; // capture the id of the current scene.
+          document.getElementById("legend").style.visibility = "hidden";
 
           if (index === 0) { // When enter the first scene
 
@@ -368,19 +369,9 @@
               // speed: 0.5
             }); // fly to a new location
 
-            if (typeof (map.getSource('neighborhoods-src')) == 'undefined') { //if the map source 'neighborhoods-src' does not exist
-              map.addSource('neighborhoods-src', {
-                type: 'geojson',
-                data: neighborhoods
-              }); // reload the map source of 'neighborhoods-src'
-            } else {
-              map.getSource('neighborhoods-src').setData(neighborhoods); // if the map source does not exist, relaod the data neighborhoods to the pre-defined map source 'counties-src'.
 
-            }
 
-            if (!map.getLayer("neighborhoods-polygons")) { // if the map layer 'neighborhoods-polygons' does not exit
-              map.addLayer(neighborhoodsLayer);
-            }
+
             document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
 
           } else if (index === 1) { // When enter the second scene.
@@ -430,6 +421,7 @@
                 if (!map.getLayer("population20-points")) {
                   map.addLayer(population20Layer);
                 }
+               document.getElementById("legend").style.visibility = "visible";
 
                 const legend = document.getElementById("legend");
                 legend.innerHTML = "<b>Population (2020)</b><br><br>";
@@ -493,27 +485,28 @@
                 if (!map.getLayer("income19-points")) {
                   map.addLayer(income19Layer);
                 }
-                // const legend = document.getElementById("legend2");
-                // legend.innerHTML = "<b>Average Household Income (2019)</b><br><br>";
+                document.getElementById("legend").style.visibility = "visible";
+
+                const legend = document.getElementById("legend");
+                legend.innerHTML = "<b>Average Household Income (2019)</b><br><br>";
 
 
-                // inc_layers.forEach((layer, i) => {
-                //   const color = inc_colors[i];
-                //   const item = document.createElement('div');
-                //   const key = document.createElement('span');
-                //   key.className = 'legend-key';
-                //   key.style.backgroundColor = color;
+                inc_layers.forEach((layer, i) => {
+                  const color = inc_colors[i];
+                  const item = document.createElement('div');
+                  const key = document.createElement('span');
+                  key.className = 'legend-key';
+                  key.style.backgroundColor = color;
 
-                //   const value = document.createElement('span');
-                //   value.innerHTML = `${layer}`;
-                //   item.appendChild(key);
-                //   item.appendChild(value);
-                //   legend.appendChild(item);
-                // });
+                  const value = document.createElement('span');
+                  value.innerHTML = `${layer}`;
+                  item.appendChild(key);
+                  item.appendChild(value);
+                  legend.appendChild(item);
+                });
 
 
           } else if (index === 3) {
-            //Relocate to Portland
             map.flyTo({
               center: [-89.941, 29.957],
               zoom: 10.62, // starting zoom
@@ -534,7 +527,8 @@
             if (!map.getLayer("risk-plots")) {
               map.addLayer(riskLayer);
             }
-                    
+               document.getElementById("legend").style.visibility = "visible";
+
             const visibility = map.getLayoutProperty(
                 riskLayer,
                 'visibility'
@@ -563,19 +557,19 @@
 
             });
 
-            if (typeof (map.getSource('emergency_pois-src')) == 'undefined') {
-              map.addSource('emergency_pois-src', {
-                type: 'geojson',
-                data: emergency_pois
-              });
-            } else {
-              map.getSource('emergency_pois-src').setData(emergency_pois);
+            // if (typeof (map.getSource('emergency_pois-src')) == 'undefined') {
+            //   map.addSource('emergency_pois-src', {
+            //     type: 'geojson',
+            //     data: emergency_pois
+            //   });
+            // } else {
+            //   map.getSource('emergency_pois-src').setData(emergency_pois);
 
-            }
+            // }
 
-            if (!map.getLayer("emergency_pois-points")) {
-              map.addLayer(emergency_poisLayer);
-            }
+            // if (!map.getLayer("emergency_pois-points")) {
+            //   map.addLayer(emergency_poisLayer);
+            // }
           }
           else if (index === 6) {
 
