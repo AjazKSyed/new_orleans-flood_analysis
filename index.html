@@ -99,20 +99,20 @@
     </article>
     <article class="scene" data-scene="4">
       <h2>What happens in an emergency?</h2>
-      <p>This section shows where active research is happening, and on what
-        topics to communicate on-going nature of
-        scientific learning. Lorem ipsum dolor sit amet, consectetuer adipiscing
-        elit. Aenean commodo ligula eget dolor.
-        Aenean massa.
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-        ridiculus mus. Donec quam felis,
-        ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-        quis enim. Donec pede justo, fringilla
-        vel, aliquet nec,
-        vulputate eget, arcu. In enim justo, rhoncus ut, imperdet a, venenatis
-        vitae, justo. Nullam dictum felis eu pede
-        mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
-        semper nisi. Aenean vulputate.
+      <p>
+        What happens in an emergency is that people would go to emergency shelters. This is most feasible when 
+        there isn't a safe route out of town due to debris, traffic, or not having a reliable means of transportation. 
+        The next option is to get out of town by car which is the most preferred option to take. This makes it so that people can be out of danger from 
+        the flooding or other natural occurences and into a safer place. New Orleans requires their citizens
+        to evacuate out of town, they even have bus systems and other means of transportation provided by the city
+        if people don't have cars. The current hurricane measures in place right now are the implementation of levees. 
+        Levees are a type of barrier that prevent the excess amounts of water from flooding the city from the coastline. 
+        Though there were a lot installed along the coastline, most of them have failed causing a sizable amount of water 
+        to flood New Orleans. They are also strengthening systems like pumps, floodwalls, floodgates, and home elevation
+        to improve the brittle structure of New Orleans, and by extension, Lousiana.
+
+       
+
       </p>
       <hr>
       <div>
@@ -125,7 +125,14 @@
     </article>
     <article class="scene" data-scene="5">
       <h2>STEP 6: Image </h2>
-      <img src="img/portland.jpg"></img>
+      <h3>IDA</h3>
+      <img src='https://s.w-x.co/util/image/w/ba-promo-ida.jpg?v=at&w=1280&h=720'/></img>
+<!--style='width: 100px'-->
+      <h3>Katrina</h3>
+      <img src='https://globalnews.ca/wp-content/uploads/2015/08/katrina7.jpg?quality=85&strip=all&w=720'/></img>
+      <img src='https://wtop.com/wp-content/uploads/2015/08/AP_374417492200-1675x1254.jpg'/></img>
+      <img src='https://cdn.britannica.com/28/197428-050-A4257FF9/views-New-Orleans-foreground-Louisiana-Superdome-Hurricane-July-29-2015.jpg'/></img>
+      <img src='https://ready.nola.gov/NOLAReady/media/Assets/Hazard%20Mitigation%20Plan/Images/Figure-19.jpg'/></img>
     </article>
     <article class="scene fullscreen" data-scene="6">
       <h2>STEP 7: Ending Page</h2>
@@ -242,7 +249,7 @@
         map.addSource('riskmap-src', {
                 'type': 'raster',
                 'tiles': [
-                    'final_assets/tiles/riskmap_refined/{z}/{x}/{y}.png'
+                    'final_assets/tiles/riskmap/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Max Jayne'
@@ -331,6 +338,9 @@
         riskLayer = {
           'id': 'risk-plots',
           'type': 'raster',
+          'layout': {
+            'visibility': 'none'
+          },
           'source': 'riskmap-src'
         };
 
@@ -503,6 +513,7 @@
 
 
           } else if (index === 3) {
+            //Relocate to Portland
             map.flyTo({
               center: [-89.941, 29.957],
               zoom: 10.62, // starting zoom
@@ -524,6 +535,24 @@
               map.addLayer(riskLayer);
             }
                     
+            const visibility = map.getLayoutProperty(
+                riskLayer,
+                'visibility'
+              );
+
+                    // Toggle layer visibility by changing the layout object's visibility property.
+                    // if it is currently visible, after the clicking, it will be turned off.
+              if (visibility === 'visible') {
+                  map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                  this.className = '';
+                } else { //otherise, it will be turned on.
+                  this.className = 'active';
+                    map.setLayoutProperty(
+                      targetLayer,
+                      'visibility',
+                      'visible'
+                    );
+                }
 
           } else if (index === 4) {
             map.flyTo({
