@@ -331,9 +331,6 @@
         riskLayer = {
           'id': 'risk-plots',
           'type': 'raster',
-          'layout': {
-            'visibility': 'none'
-          },
           'source': 'riskmap-src'
         };
 
@@ -506,7 +503,6 @@
 
 
           } else if (index === 3) {
-            //Relocate to Portland
             map.flyTo({
               center: [-89.941, 29.957],
               zoom: 10.62, // starting zoom
@@ -528,24 +524,6 @@
               map.addLayer(riskLayer);
             }
                     
-            const visibility = map.getLayoutProperty(
-                riskLayer,
-                'visibility'
-              );
-
-                    // Toggle layer visibility by changing the layout object's visibility property.
-                    // if it is currently visible, after the clicking, it will be turned off.
-              if (visibility === 'visible') {
-                  map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                  this.className = '';
-                } else { //otherise, it will be turned on.
-                  this.className = 'active';
-                    map.setLayoutProperty(
-                      targetLayer,
-                      'visibility',
-                      'visible'
-                    );
-                }
 
           } else if (index === 4) {
             map.flyTo({
