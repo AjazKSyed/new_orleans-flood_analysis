@@ -505,12 +505,13 @@
 
           } else if (index === 3) {
             map.flyTo({
-              center: [-89.941, 29.957],
-              zoom: 10.62, // starting zoom
+              center: [-90.019, 29.998],
+              zoom: 13, // starting zoom
               // pitch: 60,
               // speed: 0.5
 
             });
+
 
             if (typeof (map.getSource('riskmap-src')) == 'undefined') {
                   map.addSource('riskmap-src', {
@@ -522,6 +523,8 @@
                 }
 
             if (!map.getLayer("risk-plots")) {
+
+
               map.addLayer(riskLayer);
             }
 
@@ -534,19 +537,19 @@
 
             });
 
-            // if (typeof (map.getSource('emergency_pois-src')) == 'undefined') {
-            //   map.addSource('emergency_pois-src', {
-            //     type: 'geojson',
-            //     data: emergency_pois
-            //   });
-            // } else {
-            //   map.getSource('emergency_pois-src').setData(emergency_pois);
+            if (typeof (map.getSource('emergency_pois-src')) == 'undefined') {
+              map.addSource('emergency_pois-src', {
+                type: 'geojson',
+                data: emergency_pois
+              });
+            } else {
+              map.getSource('emergency_pois-src').setData(emergency_pois);
 
-            // }
+            }
 
-            // if (!map.getLayer("emergency_pois-points")) {
-            //   map.addLayer(emergency_poisLayer);
-            // }
+            if (!map.getLayer("emergency_pois-points")) {
+              map.addLayer(emergency_poisLayer);
+            }
           }
           else if (index === 6) {
 
@@ -567,22 +570,26 @@
           var index = response.index;
 
           if (index === 0) {
-            if (map.getLayer("neighborhoods-polygons")) {
-              map.removeLayer('neighborhoods-polygons');
-            }
+
             if (response.direction == 'down') {
               document.getElementById("cover").style.visibility = "hidden"; // when you scroll down, the cover page will be hided.
             } else {
               document.getElementById("cover").style.visibility = "visible"; // when you scroll up, the cover page will be shown.
             }
           } else if (index === 1) {
-            https://github.com/AjazKSyed/new_orleans-flood_analysis
-            if (map.getLayer("emergency_pois-points")) {
-              map.removeLayer('emergency_pois-points');
+            if (map.getLayer("population20-polygons")) {
+              map.removeLayer('population20-polygons');
             }
-          } else if (index === 3) {
+          } else if (index === 2) {
+
+            if (map.getLayer("income19-polygons")) {
+              map.removeLayer('income19-polygons');
+            }
+          }else if (index === 3) {
             //exit to Portland
-            map.setStyle('mapbox://styles/mapbox/light-v10');
+            if (map.getLayer("risk-plots")) {
+              map.removeLayer('risk-plots');
+            }
           }
         }
 
