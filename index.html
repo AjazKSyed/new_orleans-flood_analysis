@@ -249,7 +249,7 @@
         map.addSource('riskmap-src', {
                 'type': 'raster',
                 'tiles': [
-                    'final_assets/tiles/riskmap/{z}/{x}/{y}.png'
+                    'final_assets/tiles/riskmap_refined/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Max Jayne'
@@ -338,9 +338,6 @@
         riskLayer = {
           'id': 'risk-plots',
           'type': 'raster',
-          'layout': {
-            'visibility': 'none'
-          },
           'source': 'riskmap-src'
         };
 
@@ -527,26 +524,6 @@
             if (!map.getLayer("risk-plots")) {
               map.addLayer(riskLayer);
             }
-               document.getElementById("legend").style.visibility = "visible";
-
-            const visibility = map.getLayoutProperty(
-                riskLayer,
-                'visibility'
-              );
-
-                    // Toggle layer visibility by changing the layout object's visibility property.
-                    // if it is currently visible, after the clicking, it will be turned off.
-              if (visibility === 'visible') {
-                  map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                  this.className = '';
-                } else { //otherise, it will be turned on.
-                  this.className = 'active';
-                    map.setLayoutProperty(
-                      targetLayer,
-                      'visibility',
-                      'visible'
-                    );
-                }
 
           } else if (index === 4) {
             map.flyTo({
