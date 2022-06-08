@@ -18,20 +18,24 @@
 
 <body>
 
-  <section id="cover" style="  background: url('https://19thnews.org/wp-content/uploads/2021/10/louisiana-hurricane_2jpg.jpg') no-repeat center center;  background-size: cover; ">
+  <section id="cover"
+    style="  background: url('https://19thnews.org/wp-content/uploads/2021/10/louisiana-hurricane_2jpg.jpg') no-repeat center center;  background-size: cover; ">
 
     <div id="intro">
       <h1>New Orleans Flood Analysis</h1>
       <h4>About New Orleans</h4>
-      <p  >
-        New Orleans is without one of the most famous US cities, known best for its exuberant carnival season,
+      <p>
+        New Orleans is without one of the most famous US cities, known best for
+        its exuberant carnival season,
         specifically it's city-wide celebration of Mardi Gras. But New Orleans
         is also famous for another reason: the many tropical hurricanes that
         batter the city and more notably, the widespread destruction that can
         accompany them.<br>New Orleans, Lousiana, is located just off of the
-        Gulf of Mexico, a tropical storm generating body of water. As a response to these conditions, New Orleans
+        Gulf of Mexico, a tropical storm generating body of water. As a response
+        to these conditions, New Orleans
         has overtime constructed levees surrounding the city to protect from the
-        rising tides and flooding.<br> Additionally, the city employs three pump stations
+        rising tides and flooding.<br> Additionally, the city employs three pump
+        stations
         that pump rainwater runoff and into the surrounding water bodies that
         can also pump floodwaters. Unfortunately, this system hasn't always been
         successful.
@@ -39,7 +43,8 @@
 
       <h4>About the Project</h4>
       <p>
-        Using our skills as cartographers, we aim to examine the city and the risk
+        Using our skills as cartographers, we aim to examine the city and the
+        risk
         posed by future hurricanes to provide a tool for potential damage
         mitigation and emergency response development.
         With the onset of global warming causing more extreme weather events
@@ -93,30 +98,34 @@
   <section id="damage_section">
     <div id="intro2">
       <h1>Hurricane Damage</h1>
-      <div id="chunks">        <h3>Hurricane Katrina (2005) </h3>
+      <div id="chunks">
+        <h3>Hurricane Katrina (2005) </h3>
 
-        <p  style="font-size: 20px;">
+        <p style="font-size: 20px;">
           In 2005, the city was hit by Hurricane Katrina, a large
-        category 3 hurricane. When Katrina made landfall on New Orleans, it
-        flooded 80% of the city within 24 hours, up to 30 feet above sea level
-        in some areas, by overtopping levees and subsequently eroding the ground
-        beneath on the backside. <br>
-    </p>
+          category 3 hurricane. When Katrina made landfall on New Orleans, it
+          flooded 80% of the city within 24 hours, up to 30 feet above sea level
+          in some areas, by overtopping levees and subsequently eroding the
+          ground
+          beneath on the backside. <br>
+        </p>
         <img id="chuck_img" src='img/KatrinaBefore.png'
           alt='Hurricane Katrina Before Image' /></img>
         <img id="chuck_img" src='img/KatrinaAfter.png'
           alt='Hurricane Katrina After Image' /></img>
       </div>
       <br>
-      <div id="chunks">       <h3>Hurricane Ida (2021) </h3>
+      <div id="chunks">
+        <h3>Hurricane Ida (2021) </h3>
 
-        <p  style="font-size: 20px;">
+        <p style="font-size: 20px;">
 
-           In 2021, New Orleans was hit by Hurricane Ida, another massive hurricane similar in nature to Katrina.
-        And as you can see the damage is similar after 16 years.
-        These are two
-        of the most devastating hurricanes that have hit New Orleans, and the
-        city has been hit by many more, all causing flooding.
+          In 2021, New Orleans was hit by Hurricane Ida, another massive
+          hurricane similar in nature to Katrina.
+          And as you can see the damage is similar after 16 years.
+          These are two
+          of the most devastating hurricanes that have hit New Orleans, and the
+          city has been hit by many more, all causing flooding.
 
         </p>
         <img id="chuck_img2" src='img/IdaBefore.png'
@@ -296,7 +305,7 @@
 
     async function geojsonFetch() {
 
-      let response, population20, income19, evac_spots;
+      let response, population20, income19, evac_spots, levees;
 
       response = await fetch("assets/income(2019).geojson");
       income19 = await response.json();
@@ -309,6 +318,8 @@
       response = await fetch("assets/evacuation.geojson");
       evac_spots = await response.json();
 
+      response = await fetch("assets/levees_lines.geojson");
+      levees = await response.json();
 
       map.on('load', () => {
 
@@ -322,6 +333,13 @@
           type: 'geojson',
           data: population20,
           attribution: 'Layer designed by Ajaz Syed'
+
+        });
+
+        map.addSource('levees-src', {
+          type: 'geojson',
+          data: levees,
+          attribution: 'Layer created and designed by Ajaz Syed'
 
         });
 
@@ -348,7 +366,17 @@
             });
           });
 
+        leveeLayer = {
+          'id': 'levees_points',
+          'type': 'line',
+          'source': 'levees-src',
+          'paint': {
+            'line-width': 3,
 
+            'line-color': ['get', 'color']
+          }
+
+        };
 
 
         evacLayer = {
@@ -666,11 +694,56 @@
 
           } else if (index === 3) {
             map.flyTo({
-              center: [-89.941, 29.957],
-              zoom: 10.5,
-
+              center: [-90.136, 30.007],
+              zoom: 10.62,
             });
+            const layer = [
+              'Greater New Orleans Hurricane Damage Risk Reduction System',
+              'Flood walls',
+              'Sunken Levees',
+              'Mississippi River Levees'
+            ];
 
+            const colors = [
+              '#FAA916',
+              '#044167',
+              '#ED3731',
+              '#193C16'
+            ];
+            if (typeof (map.getSource('levees-src')) == 'undefined') {
+              map.addSource('levees-src', {
+                type: 'geojson',
+                data: levees,
+                attribution: 'Layer created and designed by Ajaz Syed'
+              });
+            } else {
+              map.getSource('levees-src')
+
+            }
+
+            if (!map.getLayer("levees_points")) {
+              map.addLayer(leveeLayer);
+            }
+
+            document.getElementById("legend").style.visibility = "visible";
+
+            const legend = document.getElementById("legend");
+            legend.innerHTML = "<b>Rough Outline of New Orleans' Current Levees</b><br><br>";
+
+
+            layer.forEach((layer, i) => {
+              const color = colors[i];
+              const item = document.createElement('div');
+              const key = document.createElement('span');
+              key.className = 'legend-key';
+              key.style.backgroundColor = color;
+
+              const value = document.createElement('span');
+              value.innerHTML = `${layer}`;
+              item.appendChild(key);
+              item.appendChild(value);
+              legend.appendChild(item);
+            });
 
           }
           else if (index === 4) {
@@ -719,7 +792,9 @@
               map.removeLayer('risk-plots');
             }
           } else if (index === 3) {
-
+            if (map.getLayer("levees_points")) {
+              map.removeLayer('levees_points');
+            }
           }
         }
 
