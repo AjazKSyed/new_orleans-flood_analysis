@@ -62,9 +62,7 @@ h3 {
 h3 {
   font-size: 16px;
 }
-p {
-  margin: 10px;
-}
+
 .map-overlay {
   position: absolute;
   bottom: 0;
@@ -121,12 +119,16 @@ h2 {
   margin-bottom: 0;
 }
 
-h5 {
+h4 {
   font-size: x-large;
   text-align: center;
 }
+h5 {
+  font-size: x-large;
+  text-align: left;
+}
 h6 {
-  font-size: large;
+  font-size: 20px;
   text-align: left;
 
 }
@@ -152,7 +154,6 @@ p {
   width: 100%;
   height: 100%;
   background: rgb(0, 39, 51);
-
 }
 
 #damage_section {
@@ -161,31 +162,25 @@ p {
   background: rgb(0, 39, 51);
 
 }
-#chunks {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-   margin: 2rem;
-  width: 35%;
-  border: 5px solid rgb(102, 102, 102);
+
+
+#bio {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+#about {
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
 #intro2 {
-  flex-direction: row;
-
-  position: relative;
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 50%;
-  color: #fff;
   padding: 2rem;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.921);
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
-}
+   color: #fff;
+   background-color: rgba(0, 0, 0, 0.921);
+ }
 #intro {
   position: relative;
   top: 40%;
@@ -199,16 +194,42 @@ img {
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
 }
 
-#intro .footnote {
+
+#chuck_img {
+  height: 500px;
+  width: 500px;
+  margin: 2rem;
+  border: 5px solid rgb(194, 194, 194);
+
+}
+#chuck_img2 {
+  height: 320px;
+  width: 500px;
+  margin: 2rem;
+  border: 5px solid rgb(194, 194, 194);
+
+}
+
+#chunks {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+ .footnote {
   text-align: right;
 }
 
-#intro .footnote a {
+ .footnote a {
   margin-right: 0.5rem;
   vertical-align: top;
 }
-
-#intro .footnote span {
+  a {
+  margin-right: 0.5rem;
+  vertical-align: top;
+  color: #30a48d;
+}
+.footnote span {
   position: relative;
   bottom: -0.5rem;
   color: #fff;
@@ -266,7 +287,5 @@ img {
   margin: 0 auto 0 auto !important;
   height: 100vh !important;
 }
-
-
 
 
