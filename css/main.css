@@ -290,7 +290,7 @@ p {
   width: 100%;
   height: 100%;
   color: white;
-  background: rgb(7, 7, 7);
+  background: black;
 }
 
 #footer_txt {
@@ -305,6 +305,10 @@ p {
 
 }
 
+#conc {
+  text-align: center; font-size: 22px; margin-top: 3rem; margin-left: 2rem; margin-right: 2rem;
+
+}
 #footer_txt p {
   font-size: 20px;
   margin-right: 1rem;
@@ -335,4 +339,5 @@ p {
   width: 90%;
   border: 5px solid rgb(0, 0, 0);
 }
+
 
