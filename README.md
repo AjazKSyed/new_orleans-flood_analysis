@@ -29,3 +29,7 @@ Negative impacts could include policy-makers choosing to invest less in zones de
 * [Failure of Levees](https://www.jstor.org/stable/4624679)
 
 * [New Orleans FloodWalls](https://sgp.fas.org/crs/misc/RS22238.pdf)
+
+* [New Orleans History](https://www.britannica.com/place/New-Orleans-Louisiana)
+
+* [New Orleans Topography](https://en-us.topographic-map.com/maps/q8su/New-Orleans/#:~:text=Name%3A%20New%20Orleans%20topographic%20map%2C%20elevation%2C%20relief.%20Coordinates%3A,Maximum%20elevation%3A%20821%20ft%20Average%20elevation%3A%203%20ft)
