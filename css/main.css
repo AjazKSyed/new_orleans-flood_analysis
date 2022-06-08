@@ -190,6 +190,7 @@ img {
   position: relative;
   top: 40%;
   left: 50%;
+  height: 100%;
   transform: translateX(-50%) translateY(-50%);
   width: 50%;
   color: #fff;
@@ -246,6 +247,7 @@ img {
 .scene p {
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 1rem;
   color: rgb(255, 255, 255);
 }
 
