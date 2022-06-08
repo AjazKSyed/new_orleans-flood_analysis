@@ -306,6 +306,9 @@ p {
 }
 
 #conc {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: rgb(255, 255, 255);
   text-align: center; font-size: 22px; margin-top: 3rem; margin-left: 2rem; margin-right: 2rem;
 
 }
