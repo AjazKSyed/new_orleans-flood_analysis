@@ -96,6 +96,7 @@
     </article>
     <article class="scene" data-scene="3">
       <h2>Flood Risk</h2>
+      <p>New Orleans is situated near the Gulf of Mexico and relatively close to sea level, with average elevation estimates ranging close to 3 ft above sea level. This makes the city particularly vulnerable to the storm systems formed in the gulf. The high winds and low-pressure weather systems that come with these storms cause sea levels to rise and waves to form, resulting in a phenomena known as storm surge that causes violent flooding in low elevation coastal areas. Though New Orleans has preventative measures such as the levee system in place to protect against storm surge tides, the city has flooded multiple times as a result of hurricanes making landfall in the region. Before Hurricane Katrina devastated New Orleans in 2005, city models estimated flood levels could reach up to 18 feet (5.5m) above sea level, and afterwards it was proven they could reach up to 30 feet (9.1m) above. Furthermore, the onset of global warming is causing more extreme weather events around the world, meaning these flood levels may increase in the future.<br>Keeping this in mind, we have developed elevational risk zones in the city of New Orleans. Our risk zones are divided into four categories: Low, Moderate, High, and Severe. Buildings and plots of land that are at or below 1 meter (3.3ft) above sea level are designated as severe. Plots at or below 4 meters (13.1ft) are designated as high. Plots at or below 9 meters (29.5ft) are moderate, and those above 9 meters (29.5ft) above sea level are designated as low. The decision to use these measures as divisions was derived as follows: The division between moderate and low was made to revolve around the highest flood level to date (during Hurricane Katrina) at about 30 feet. Moderate plots are designated where it has been proven possible flood damage can occur or has occurred at a similar elevation in the past and damage is only likely from large storm systems similar to Katrina. Low risk plots are designated as such because though they have likely not been damaged due to past flooding, larger storm systems exacerbated by global warming could damage them in the future. For the division between moderate and high risk, multiple factors were considered including the 18-foot previous maximum flood level estimate, as well as multiple floods taking place before and after, and the levee system of New Orleans. High risk plots are designated as those almost certain to be damaged if storm surge overtops the levee system, and moderate again as those likely to be damaged only by unusually large storms. Finally, the division between high and severe falls at 1 meter, and severe plots are those that are likely to be damaged by any sort of flooding in that area of New Orleans, even if levees are not fully overtopped.</p>
     </article>
     <article class="scene" data-scene="4">
       <h2>What happens in an emergency?</h2>
@@ -513,10 +514,10 @@
             });
 
             const risk_layers = [
-              '( <=1m above sea level )',
-              '( <=4m above sea level )',
-              '( <=9m above sea level )',
-              '( >9m above sea level )'
+              'Low (<=1m above sea level)',
+              'Moderate (<=4m above sea level)',
+              'High (<=9m above sea level)',
+              'Severe (>9m above sea level)'
             ];
 
             const risk_colors = [
