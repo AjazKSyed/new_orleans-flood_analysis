@@ -146,12 +146,11 @@ p {
 #cover {
   width: 100%;
   height: 100%;
-  background: rgb(0, 39, 51);
-}
+  background: url('https://19thnews.org/wp-content/uploads/2021/10/louisiana-hurricane_2jpg.jpg') no-repeat center center;  background-size: cover;}
 
 #damage_section {
   width: 100%;
-  height: 115%;
+  height: 100%;
   background : rgba(0, 0, 0);
 
 }
@@ -174,6 +173,10 @@ p {
    color: #fff;
    background-color: rgba(0, 0, 0, 0.921);
  }
+
+ #chunk_text {
+  font-size: 25px; text-align: center;
+ }
 #intro {
   position: relative;
   top: 40%;
@@ -189,15 +192,15 @@ p {
 
 
 #chuck_img {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
   margin: 2rem;
   border: 5px solid rgb(194, 194, 194);
 
 }
 #chuck_img2 {
-  height: 320px;
-  width: 500px;
+  height: 250px;
+  width: 400px;
   margin: 2rem;
   border: 5px solid rgb(194, 194, 194);
 
