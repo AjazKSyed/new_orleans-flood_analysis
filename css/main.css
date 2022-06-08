@@ -55,13 +55,7 @@ body {
   padding: 0;
 }
 
-h3 {
-  margin: 10px;
-  font-size: 18px;
-}
-h3 {
-  font-size: 16px;
-}
+
 
 .map-overlay {
   position: absolute;
@@ -173,8 +167,8 @@ p {
    background-color: rgba(0, 0, 0, 0.921);
  }
 
- #chunk_text {
-  font-size: 25px; text-align: center;
+ h3 {
+  font-size: 27px; text-align: center;
  }
 #intro {
   position: relative;
