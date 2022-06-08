@@ -393,7 +393,7 @@
 
 
         population20Layer = {
-          'id': 'population20-polygons',
+          'id': 'Population',
           'type': 'fill',
           'source': 'population20-src',
           'layout': {
@@ -423,7 +423,7 @@
 
 
         income19Layer = {
-          'id': 'income19-polygons',
+          'id': 'Income',
           'type': 'fill',
           'source': 'income19-src',
           'layout': {
@@ -551,11 +551,11 @@
             map.addLayer(income19Layer);
 
             document.getElementById("menu").style.visibility = "visible";
-            if (!map.getLayer('population20-polygons') || !map.getLayer('income19-polygons')) {
+            if (!map.getLayer('Population') || !map.getLayer('Income')) {
               return;
             }
 
-            const toggleableLayerIds = ['population20-polygons', 'income19-polygons'];
+            const toggleableLayerIds = ['Population', 'Income'];
 
             for (const id of toggleableLayerIds) {
               if (document.getElementById(id)) {
@@ -590,7 +590,7 @@
                     'visibility',
                     'visible'
                   );
-                  if (clickedLayer == 'population20-polygons') {
+                  if (clickedLayer == 'Population') {
                     document.getElementById("legend").style.visibility = "visible";
 
                     const legend = document.getElementById("legend");
@@ -779,11 +779,11 @@
               map.removeLayer('evac_points');
             }
           } else if (index === 1) {
-            if (map.getLayer("population20-polygons")) {
-              map.removeLayer('population20-polygons');
+            if (map.getLayer("Population")) {
+              map.removeLayer('Population');
             }
-            if (map.getLayer("income19-polygons")) {
-              map.removeLayer('income19-polygons');
+            if (map.getLayer("Income")) {
+              map.removeLayer('Income');
 
             }
             document.getElementById("menu").style.visibility = "hidden";
